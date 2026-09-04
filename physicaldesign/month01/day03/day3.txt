@@ -1,0 +1,36 @@
+### Month 1, Week 1, Day 3 — Git Fundamentals
+
+#### 🧠 Concepts Learned
+
+I learned how **Git actually works internally**, rather than treating it as just a set of commands. 
+I understood that a Git repository contains a hidden `.git/` directory that stores the repository's history and metadata. 
+I learned the three main Git states — **working directory, staging area, and commit history** — and how files move between these states using commands such as `git add` and `git commit`. 
+I also learned that a commit represents a snapshot of the project with a message and a link to its parent commit. 
+I understood that **branches are pointers to commits**, not separate copies of the entire project, and learned the purpose of `.gitignore` for preventing files such as `venv/` and `__pycache__/` from being tracked.
+
+#### 💻 Hands-on Git Practice
+
+I practiced Git in a **fresh test repository** so I could safely experiment. 
+I initialized the repository with `git init`, inspected its state using `git status`, created and staged files using `git add`, and created commits using `git commit -m "..."`. 
+I used `git log` to inspect commit history and commit hashes, and used `git diff` to understand exactly what changed before staging. 
+This helped me understand the complete workflow from modifying a file to recording that change permanently in Git history.
+
+#### 🌿 Branching and Merging
+
+I practiced creating and switching between branches using commands such as `git branch experiment` and `git switch experiment`. I made changes on the experiment branch and verified that those changes were not present on the `main` branch. I then used `git merge experiment` to combine the branch back into `main`. This gave me practical understanding of how Git allows multiple versions of development work to exist and later be integrated.
+
+#### ⚔️ Merge Conflict Resolution
+
+I deliberately created a **merge conflict** by modifying the same line differently on two branches. I learned how Git marks conflicting sections in the file and practiced resolving the conflict manually by choosing the correct final content, staging the resolved file with `git add`, and completing the merge commit. This was an important practical exercise because it showed me that Git cannot always automatically determine which change should be kept.
+
+#### ☁️ GitHub Remote Workflow
+
+I connected my real **`ai-driven-physical-design`** repository to GitHub using a remote named `origin`. I learned the difference between my **local Git repository** and the **GitHub remote repository**, and practiced pushing my commits using `git push -u origin main`. I also added a Python-focused `.gitignore` so development files such as `venv/` and `__pycache__/` are excluded from the repository.
+
+#### 🔄 Merge vs Rebase
+
+I learned the conceptual difference between **`git merge` and `git rebase`**. Merge combines branches while preserving their existing commit history and creates a merge commit when necessary, whereas rebase moves commits onto a new base and creates a more linear history. I focused on understanding the concept rather than using rebase extensively.
+
+#### 🎯 Overall Progress
+
+Day 3 gave me a proper understanding of **version control and Git workflows**. I moved beyond simply running `git init`, `git add`, and `git commit` and learned how Git tracks changes through the working directory, staging area, and commit history. I gained hands-on experience with commits, branches, merging, conflict resolution, `.gitignore`, remotes, and GitHub. This establishes the version-control foundation needed to safely manage all future **Python, AI, automation, and EDA projects** in my 15-month roadmap.
