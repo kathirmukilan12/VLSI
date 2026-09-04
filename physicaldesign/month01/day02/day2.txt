@@ -1,0 +1,96 @@
+### Month 1, Week 1, Day 2 — Python Fundamentals
+
+#### 🧠 Concepts Learned
+
+I learned the core fundamentals of **Python programming**, including variables and data types such as `int`, `float`, `str`, `bool`, `list`, and `dict`. I practiced decision-making with `if`, `elif`, and `else`, repetition with `for` and `while` loops, and reusable code with functions using `def` and `return`. I also learned **default function arguments** and formatted output using **f-strings**.
+
+#### 💻 `basics.py` — Functions and Core Python
+
+I created **`basics.py`** to practice Python fundamentals and functions. I implemented an `is_even(n)` function to determine whether a number is even and a `factorial(n)` function using a loop rather than recursion.
+
+Example outputs:
+
+```text
+is_even(10) → True
+is_even(7)  → False
+factorial(5) → 120
+```
+
+This helped me understand function definitions, parameters, return values, Boolean results, and `for` loops with `range()`.
+
+#### 🔢 `numbers.py` — Manual Min/Max/Average
+
+I created **`numbers.py`** to process a list of numbers using loops. Instead of using Python's built-in `min()` and `max()` functions, I implemented the logic manually.
+
+Example:
+
+```text
+Enter numbers: 10 20 30 40 50
+
+Minimum: 10
+Maximum: 50
+Average: 30.0
+```
+
+This gave me practical experience with lists, loops, comparisons, accumulation, and calculating an average.
+
+#### 🖥️ `menu.py` — Menu-Driven CLI
+
+I created **`menu.py`** as an interactive command-line program. It uses a `while True` loop to repeatedly display a menu, accept user input, perform one of the available actions, and use `break` to exit the program.
+
+Example interaction:
+
+```text
+1. Add
+2. Subtract
+3. Exit
+
+Enter your choice: 1
+Enter first number: 10
+Enter second number: 5
+Result: 15
+
+Enter your choice: 3
+Exiting...
+```
+
+This helped me understand user input, conditional statements, loops, program control, and CLI-based interaction.
+
+#### 🧪 `numpy_test.py` — Virtual Environment and NumPy
+
+I created **`numpy_test.py`** to verify my Python package environment. I created a virtual environment, installed **NumPy using `pip`**, imported NumPy, and performed a basic array operation.
+
+Example output:
+
+```text
+Array: [1 2 3]
+Array × 2: [2 4 6]
+```
+
+This introduced me to the workflow of creating isolated Python environments and installing external packages — a workflow that will become important when working with AI/ML libraries later.
+
+#### 🐛 Debugging Practice
+
+I also practiced tracing programs instead of immediately running them. 
+I analyzed what happens when `numbers.py` receives empty input and learned why invalid input such as `"abc"` can cause a **`ValueError`** when passed to `int()`. 
+I also examined the factorial loop and understood why `range(1, n + 1)` is required to include `n` in the multiplication.
+
+#### 🗂️ Dictionary Practice
+
+I implemented **`count_vowels(s)`** as an additional problem to practice dictionaries as counters. For example:
+
+```text
+count_vowels("hello world")
+
+Output:
+{'a': 0, 'e': 1, 'i': 0, 'o': 2, 'u': 0}
+```
+
+This strengthened my understanding of dictionaries, loops, string processing, and counting patterns.
+
+#### 🎯 Overall Progress
+
+By the end of Day 2, I moved from **Linux/terminal fundamentals into practical Python programming**. 
+I can now create and run Python scripts, work with basic data types, use conditions and loops, define functions, process user input, build simple CLI applications, 
+manually implement numerical logic, use dictionaries for counting, debug common input errors, and manage Python packages through `venv` and `pip`. 
+These skills provide the programming foundation I will use for **automation, AI/ML, data processing, and EDA scripting** throughout the roadmap.
