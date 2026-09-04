@@ -1,0 +1,335 @@
+# Week 01 — Weekly Output Report
+
+## 1. What I Learned
+
+### Linux
+
+* Linux filesystem hierarchy: `/`, `/home`, `/etc`, `/usr`, `/tmp`
+* Absolute vs relative paths
+* Basic Linux commands:
+
+  * `pwd`
+  * `ls`
+  * `cd`
+  * `mkdir`
+  * `rm`
+  * `cp`
+  * `mv`
+  * `touch`
+  * `cat`
+* `ls`, `ls -l`, `ls -a`, and `ls -la`
+* File permissions and the `rwx` model
+* Permission numbers such as `755` and `644`
+* `stdin`, `stdout`, and `stderr`
+* Pipes `|`
+* Output redirection `>` and `>>`
+* Basic Linux exploration using WSL
+
+### Python
+
+* Variables and basic data types:
+
+  * `int`
+  * `float`
+  * `str`
+  * `bool`
+  * `list`
+  * `dict`
+* Conditional statements
+* `for` and `while` loops
+* Functions and return values
+* Default function arguments
+* f-strings
+* List and dictionary usage
+* Tuples and immutability
+* Sets
+* List/dictionary comprehensions
+* File I/O using `with open()`
+* Line-by-line file processing
+* `strip()` and `split()`
+* `try/except`
+* Basic exception handling
+* Command-line arguments using `sys.argv`
+
+### Git
+
+* What a Git repository actually is
+* `.git/`
+* Working directory
+* Staging area
+* Commit history
+* Commit hashes
+* Branches
+* `.gitignore`
+* Local repository vs GitHub remote
+* `origin`
+* `git diff`
+* `git merge`
+* Merge conflicts
+* Basic merge vs rebase concept
+
+---
+
+## 2. What I Implemented
+
+### Python Programs
+
+* `is_even(n)`
+* `factorial(n)` using a loop
+* Manual minimum/maximum/average calculation
+* Menu-driven CLI using `while True`
+* `count_vowels(s)` using a dictionary
+* `parse_key_value(line)`
+* Component-file parser
+* Average X/Y position calculator
+* Exception handling for:
+
+  * Missing files
+  * Empty files
+  * Malformed data
+  * Invalid integer conversion
+
+### EDA-Related Python Practice
+
+Created and parsed a toy component file containing:
+
+```text
+U1 100 200
+U2 150 250
+U3 200 300
+```
+
+Also created and parsed a toy `.def`-style file containing:
+
+```text
+VERSION
+DESIGN
+UNITS
+DIEAREA
+COMPONENTS
+```
+
+### Week 1 Capstone
+
+Implemented:
+
+```text
+week01_capstone.py
+```
+
+The program:
+
+* Takes a filename through `sys.argv`
+* Reads component data
+* Handles missing files
+* Handles empty files
+* Handles malformed lines
+* Calculates X/Y minimum
+* Calculates X/Y maximum
+* Calculates X/Y average
+* Uses manual min/max logic
+* Creates rounded X-position buckets
+* Uses a dictionary to count components per bucket
+
+---
+
+## 3. What I Still Don't Understand
+
+* Git internals beyond the basic `.git` concept
+* Git rebase in practical usage
+* Advanced Linux permissions
+* Difference between processes and threads
+* More advanced shell scripting
+* Advanced Python exception design
+* Python classes and object-oriented programming
+* Generators and iterators
+* Advanced comprehensions
+* Robust parsing of complex EDA file formats
+* Real `.lef` and `.def` syntax
+* How large EDA files should be parsed efficiently
+* NumPy beyond basic array operations
+* How Python will eventually interact with actual EDA tools
+
+These are intentionally left for later stages of the roadmap.
+
+---
+
+## 4. Skills Gained
+
+### Linux
+
+* Navigate Linux filesystem
+* Create and manipulate files/directories
+* Understand paths
+* Inspect permissions
+* Use pipes and redirection
+* Work inside WSL
+
+### Python
+
+* Write basic functions
+* Use loops and conditions
+* Work with lists and dictionaries
+* Process text files
+* Handle common runtime errors
+* Parse structured text
+* Build command-line programs
+* Perform basic data analysis
+
+### Git
+
+* Initialize repositories
+* Stage and commit changes
+* Inspect history
+* Create branches
+* Merge branches
+* Resolve merge conflicts
+* Use `.gitignore`
+* Understand local/remote repositories
+
+### EDA Preparation
+
+* Understand that EDA files are structured text
+* Extract fields from text
+* Store parsed information in Python data structures
+* Calculate physical-coordinate statistics
+* Build the foundation for future `.lef`/`.def` analysis
+
+---
+
+## 5. Project Progress
+
+### AI-Driven Physical Design Project
+
+Current progress:
+
+```text
+Repository
+    ↓
+Git setup
+    ↓
+Month 01
+    ↓
+Day 01 — Linux fundamentals
+    ↓
+Day 02 — Python fundamentals
+    ↓
+Day 03 — Git fundamentals
+    ↓
+Day 04 — Python data structures + file I/O
+    ↓
+Week 01 Capstone
+```
+
+The project has moved from basic environment setup to the first working Python-based component-data analysis.
+
+No real EDA tools have been introduced yet.
+
+---
+
+## 6. Research Progress
+
+Completed initial research/practice on:
+
+* Linux filesystem concepts
+* Git workflow
+* Python data structures
+* Python file parsing
+* `.def` file structure
+* Basic EDA component-coordinate representation
+* Python virtual environments
+* NumPy installation and basic usage
+
+EDA tool research is intentionally limited at this stage because the roadmap introduces actual EDA tools later.
+
+---
+
+## 7. Interview Readiness
+
+### I can currently explain:
+
+* Absolute vs relative Linux paths
+* `ls` vs `ls -l` vs `ls -a`
+* Linux `rwx` permissions
+* Why `755` means `rwxr-xr-x`
+* `stdin`, `stdout`, and `stderr`
+* Linux pipes
+* Git working directory → staging → commit
+* Git branches
+* Git merge
+* Git merge conflicts
+* List vs dictionary
+* Tuple vs list
+* Set vs list
+* `try/except`
+* File parsing with `open()`
+* `sys.argv`
+* Manual min/max calculation
+
+### Current interview level
+
+**Beginner → early intermediate foundation**
+
+I can explain the fundamentals and implement small programs, but I still need more practice explaining concepts without relying on examples.
+
+---
+
+## 8. Weaknesses
+
+1. I still need more repetition with Linux commands instead of memorizing them.
+2. Python error handling needs more practice.
+3. I need to become faster at writing Python without referring to examples.
+4. My understanding of Git is functional but not yet deep.
+5. I have limited experience with real-world file formats.
+6. I haven't worked with actual EDA tools yet.
+7. My Python data structures knowledge needs more problem-solving practice.
+8. I need more practice debugging my own code before asking for the solution.
+9. I need to improve my ability to explain technical concepts in my own words.
+10. I have not yet connected Python programming with an actual physical-design workflow.
+
+---
+
+## 9. Next Week's Objective
+
+### Week 02 — Python Engineering Foundations
+
+Focus on moving from **basic Python syntax → writing better Python programs**.
+
+Primary objectives:
+
+* Strengthen functions
+* Master lists/dictionaries/sets/tuples
+* Practice error handling
+* Learn modules and imports
+* Learn Python project structure
+* Learn classes and basic OOP
+* Learn `pip` and dependency management properly
+* Improve command-line programs
+* Practice debugging
+* Write cleaner, reusable Python code
+* Continue Git discipline
+* Build a slightly larger Python project
+
+### Target outcome
+
+By the end of Week 2:
+
+```text
+Basic Python
+     ↓
+Reusable Python code
+     ↓
+Modules + OOP
+     ↓
+CLI programs
+     ↓
+File/data processing
+     ↓
+Better Git workflow
+     ↓
+Stronger foundation for EDA automation
+```
+
+The goal is not simply to **know Python syntax**.
+
+The goal is to reach the point where I can look at a small engineering problem and independently design, implement, debug, and commit a Python solution.
