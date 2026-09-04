@@ -1,0 +1,67 @@
+### Month 1, Week 1, Day 4 — Python Data Structures + File I/O
+
+#### 🧠 Concepts Learned
+
+On **Day 4**, I went deeper into Python data structures and learned how to work with **list/dictionary comprehensions, nested data structures, tuples, sets, and file I/O**. 
+I learned why tuples are immutable and when they are preferable to lists, when a set is useful for unique values and fast membership checking, and how `split()` and `strip()` can be used to parse structured text. 
+I also learned how to safely open and process files using `with open(...) as f:` and how to read files **line-by-line**, which is important when processing large EDA files.
+
+#### 🔑 `parse_key_value` — Structured Text Parsing
+
+I implemented a generalized **`parse_key_value(line)`** function that converts structured text such as:
+
+```text
+WIDTH 45 HEIGHT 20
+```
+
+into:
+
+```python
+{'WIDTH': 45, 'HEIGHT': 20}
+```
+
+Instead of hardcoding only two key-value pairs, I used:
+
+```python
+for i in range(0, len(parts), 2):
+```
+
+to process any number of key-value pairs. 
+This was my first practical exercise in writing a reusable parser and directly prepares me for parsing structured **EDA files such as `.lef` and `.def`** later in the roadmap.
+
+#### 📄 Component File Processing
+
+I created a component-data file, **`components.txt`**, containing component names and their X/Y coordinates. 
+I then implemented **`calculate_average(filename)`** to read the file line-by-line, 
+extract the component name and coordinates using `strip()` and `split()`, accumulate the X and Y values, and calculate the average position.
+
+The script produces output in the form:
+
+```text
+Average X: <calculated value>
+Average Y: <calculated value>
+```
+
+This exercise introduced me to processing coordinate-based data, 
+which is directly relevant to future **placement and physical-design data analysis**.
+
+#### 🛡️ Exception Handling & Defensive Programming
+
+A major part of Day 4 was learning why **exception handling matters in automation**. 
+I analyzed what happens when the requested file does not exist and identified the exact exception as **`FileNotFoundError`**. 
+I also discovered a separate edge case: when `components.txt` exists but contains zero lines, the loop never executes, leaving `count = 0`; attempting `total_x / count` then produces a **`ZeroDivisionError`**. 
+I learned to handle both missing files and empty files instead of allowing the program to crash unexpectedly.
+
+I also considered malformed input and learned that incorrect line structures can result in errors such as **`IndexError`** or **`ValueError`**, reinforcing the importance of defensive parsing when processing real-world data.
+
+#### 🔬 EDA-Adjacent Experimentation
+
+I connected the Python file-processing concepts to future EDA work by practicing parsing of **structured, DEF-like text**. 
+The `parse_key_value()` exercise using `WIDTH` and `HEIGHT` simulated the type of structured information that Python will eventually extract from real **`.lef`/`.def` files**. 
+This gave me an early introduction to the idea of using Python as an automation and analysis layer around EDA data.
+
+#### 🎯 Overall Progress
+
+Day 4 moved my Python skills from basic programming into **data processing and file-based automation**. 
+I can now parse structured text, process files line-by-line, calculate values from coordinate data, use dictionaries for structured results, and reason about multiple failure cases such as `FileNotFoundError`, `ZeroDivisionError`, `IndexError`, and `ValueError`. 
+Most importantly, I began connecting general Python programming to **EDA-adjacent tasks**, establishing the foundation for the real `.lef`/`.def` parsing and physical-design automation work that comes later in the roadmap.
