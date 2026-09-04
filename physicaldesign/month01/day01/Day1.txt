@@ -1,0 +1,19 @@
+### Month 1, Week 1, Day 1 — Linux + Terminal Fundamentals
+
+On **Day 1**,
+I learned the fundamentals of **Linux and terminal usage**,
+which are essential prerequisites for working with Python, Git, and EDA tools.
+I learned how the Linux filesystem is organized and practiced navigating it using commands such as `pwd` to display my current directory,
+`ls -la` to view files and permissions, and `cd` to move between directories. 
+I created my AI-EDA workspace using `mkdir -p ~/ai-eda/month01/day01` and created files using `touch file1.txt file2.txt file3.txt`.
+I also created the project structure with `mkdir notes scripts data` and used `cat > log.txt` to create a text file directly from the terminal.
+I practiced file operations using `cp log.txt notes/`, `mv notes/log.txt notes/day01-log.txt`, and `rm log.txt`,
+which helped me understand copying, moving, renaming, and deleting files.
+I learned the difference between **absolute and relative paths**, for example `/home/user/file.txt` versus `../file.txt`.
+I also studied Linux file permissions and learned how `rwx` represents read, write, and execute permissions for the **owner, group, and others**,
+including common permission values such as `755` and `644`, which I could modify using commands such as `chmod 755 script.sh`. 
+I then learned how Linux commands communicate through **stdin, stdout, and stderr**, and practiced combining commands with pipes,
+such as `ls -la | grep .txt`, where the output of `ls` becomes the input to `grep`.
+I also practiced output redirection using `ls -la > listing.txt` and verified the saved output with `cat listing.txt`.
+Finally, I checked my development environment using commands such as `python3 --version` and `git --version` and began working with **VS Code, WSL, and GitHub**.
+Overall,Day 1 gave me practical command-line experience and established the Linux foundation required for the upcoming Python, Git, and EDA stages of my AI-EDA roadmap.
