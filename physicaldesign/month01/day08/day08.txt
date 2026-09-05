@@ -1,0 +1,56 @@
+Day 8 — Karnaugh Maps (K-Maps)
+
+#### 🧠 Concepts Learned
+
+On **Day 8**, I learned **Karnaugh Maps (K-maps)** as a manual technique for simplifying Boolean expressions. 
+I learned how to construct **2-variable, 3-variable, and 4-variable K-maps** and why the cells follow **Gray-code ordering**, such as `00 → 01 → 11 → 10`, so that adjacent cells differ by only one variable. 
+I learned the rules for grouping `1`s into powers of two — **1, 2, 4, 8**, etc. — and how larger valid groups generally produce simpler Boolean expressions. 
+I also learned about **don't-care conditions (`X`)** and how they can optionally be included in groups when doing so produces a simpler expression.
+
+#### 🗺️ Manual K-Map Minimization
+
+I practiced minimizing Boolean functions manually using K-maps rather than immediately relying on code. 
+The process involved placing truth-table outputs into the correct K-map cells, identifying adjacent groups, selecting groups of `1`s in powers of two, and deriving a minimized **SOP (Sum of Products)** expression from the grouped cells. 
+This helped me understand what Boolean minimization looks like visually before considering how synthesis tools automate similar optimization tasks.
+
+#### 🔍 Truth-Table Verification
+
+I continued the verification methodology from **Days 6 and 7** by comparing the original Boolean expression with the hand-minimized expression. 
+The goal was to generate truth tables for both expressions using my existing Boolean truth-table generator and confirm that their **RESULT columns match for every input combination**. 
+This reinforces that minimization is not simply about producing a shorter-looking expression — the optimized expression must preserve the exact original logic.
+
+#### 🐍 K-Map Grid Printer
+
+I also worked on the Python side of K-maps by creating a function that accepts a truth table containing `0` and `1` outputs and places those values into the correct **K-map grid layout**. 
+The key challenge is correctly mapping the normal binary input combinations into **Gray-code ordering** rather than simply placing values in sequential binary order.
+
+For a 4-variable K-map, the row and column ordering follows:
+
+```text
+Rows:    00  01  11  10
+Columns: 00  01  11  10
+```
+
+This means the program must correctly translate each input combination into its corresponding K-map position.
+
+#### ❌ Don't-Care Conditions
+
+I studied how **don't-care (`X`) conditions** can affect minimization. Unlike a required `1`, an `X` does not have to be included in a group, but it can be treated as a `1` when doing so creates a larger group and therefore a simpler expression. 
+I compared the resulting minimized logic when don't-cares are available versus when those same locations are treated strictly as `0`.
+
+#### 🔧 NAND-Only Implementation
+
+I connected K-map minimization with the **NAND-universal gate concepts from Day 7**. After obtaining a minimized Boolean expression, the next step is to convert it into a **NAND-only implementation**. 
+This demonstrated the relationship between Boolean optimization and physical implementation: reducing unnecessary literals and terms can reduce the amount of logic required, which can potentially contribute to lower **area, power, and delay**.
+
+#### 🏭 EDA/Synthesis Connection
+
+I learned why K-maps are useful for understanding Boolean minimization but do not scale well to large real-world designs. 
+A K-map becomes increasingly impractical as the number of variables increases because the number of cells grows exponentially. 
+Modern synthesis tools such as **Yosys and Design Compiler** therefore use algorithmic optimization techniques capable of handling much larger Boolean networks rather than manually constructing K-maps for every logic function.
+
+#### 🎯 Overall Progress
+
+Day 8 connected my **Boolean algebra and logic-gate knowledge to Boolean minimization**. 
+I learned how Gray-code ordering, grouping rules, don't-care conditions, SOP expressions, and truth-table verification work together to simplify logic. 
+I also connected manual K-map optimization to **NAND-based implementation and synthesis**, giving me an early understanding of how a high-level Boolean function can eventually be transformed into optimized hardware.
