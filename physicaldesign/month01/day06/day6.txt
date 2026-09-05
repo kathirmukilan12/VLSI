@@ -1,0 +1,91 @@
+#### 🧠 Concepts Learned
+
+On **Day 6**, I learned the fundamentals of **number systems and Boolean algebra**, focusing on binary, decimal, hexadecimal, and digital logic. 
+I understood why digital hardware primarily uses **binary values (0 and 1)** and learned how decimal, binary, and hexadecimal representations relate to each other. 
+I also studied the fundamental Boolean operations **AND, OR, and NOT**, truth tables, and important Boolean identities including **De Morgan's laws, absorption, and distributive laws**. 
+I learned that a truth table provides a systematic way to verify whether two Boolean expressions are logically equivalent.
+
+#### 🔢 Number-System Implementation
+
+I created a Python program for number-system conversion with functions including **`dec_to_bin(n)`**, **`bin_to_dec(s)`**, and **`hex_to_bin(s)`**. 
+In `dec_to_bin()`, I implemented the **division-by-2 and remainder algorithm** without using Python's built-in `bin()` function. For example:
+
+```text
+7   → 111
+12  → 1100
+19  → 10011
+25  → 11001
+31  → 11111
+42  → 101010
+50  → 110010
+64  → 1000000
+100 → 1100100
+127 → 1111111
+```
+
+For `bin_to_dec()`, I implemented the conversion manually using the positional calculation:
+
+```text
+result = result * 2 + int(bit)
+```
+
+I also added validation for invalid binary digits and handled negative and empty inputs using `ValueError`. 
+For hexadecimal conversion, I created a lookup dictionary mapping each hexadecimal digit to its four-bit binary representation, for example:
+
+```text
+A  → 1010
+F  → 1111
+2B → 00101011
+7C → 01111100
+D5 → 11010101
+```
+
+#### 🧩 Boolean Truth-Table Generator
+
+I also developed a significantly more advanced **Boolean expression truth-table generator**. 
+Instead of hardcoding individual expressions, I created a tokenizer, parser, and evaluator that can process expressions containing **NOT, AND, and OR**. 
+The parser follows the precedence:
+
+```text
+NOT → AND → OR
+```
+
+This allowed expressions such as:
+
+```text
+NOT (A AND B)
+NOT (A OR B)
+NOT NOT A
+A AND (NOT B)
+```
+
+to be evaluated systematically for every possible combination of Boolean inputs. 
+I also used recursive parsing in `parse_not()`, which allows expressions such as `NOT NOT A` to be handled correctly.
+
+#### 🔍 Verification & De Morgan's Laws
+
+I learned how Boolean algebra can be connected to **verification thinking**, which is fundamental in EDA. 
+For De Morgan's laws, I worked with transformations such as:
+
+```text
+NOT (A AND B) ≡ (NOT A) OR (NOT B)
+
+NOT (A OR B) ≡ (NOT A) AND (NOT B)
+```
+
+The important verification step is to generate the truth table for both the original and transformed expressions and compare their **RESULT columns row by row**. 
+This demonstrates logical equivalence rather than simply assuming the algebraic transformation is correct.
+
+#### 🧠 Parser Reasoning
+
+While working on the truth-table generator, I also explored concepts beyond the basic assignment. 
+I understood why `parse_not()` uses recursion — it allows multiple consecutive NOT operations such as `NOT NOT A`. 
+I also examined why the parser's call hierarchy places the lower-precedence **OR** operation at the top, followed by **AND**, and then the higher-precedence **NOT** operation. 
+This helped me understand operator precedence as an actual parsing mechanism rather than something to memorize.
+
+#### 🎯 Overall Progress
+
+Day 6 strengthened both my **digital-logic foundation and Python problem-solving skills**. 
+I can now manually reason about binary and hexadecimal representations, implement number-system conversions without relying on built-in conversion functions, validate binary input, and build a program capable of generating Boolean truth tables. 
+More importantly, I began applying **verification thinking** by using truth tables to validate Boolean transformations such as De Morgan's laws. 
+The combination of Python programming, Boolean logic, and systematic verification is directly relevant to my future **RTL, EDA automation, synthesis, and physical-design** work.
