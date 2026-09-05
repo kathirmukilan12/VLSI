@@ -1,0 +1,69 @@
+Day 7 — Logic Gates + Combinational Circuits
+
+#### 🧠 Concepts Learned
+
+On **Day 7**, I learned the physical meaning behind the Boolean algebra from Day 6 by studying the **seven basic logic gates**: AND, OR, NOT, NAND, NOR, XOR, and XNOR. 
+I understood how Boolean expressions, truth tables, and gate-level circuits are three different representations of the same logical behavior. 
+I also learned why **NAND and NOR are universal gates**, meaning any Boolean function can be constructed using only NAND gates or only NOR gates.
+
+#### 🔧 `nand_universal.py` — NAND Universality
+
+I created **`nand_universal.py`** to prove that NAND can be used to construct other fundamental gates. 
+I implemented:
+
+```text
+NOT A = A NAND A
+AND A,B = (A NAND B) NAND (A NAND B)
+OR A,B = (A NAND A) NAND (B NAND B)
+```
+
+I then verified each NAND-based construction against the corresponding original gate using truth tables. 
+All **3/3 NAND constructions passed verification**, confirming that the implementations produced the same outputs as NOT, AND, and OR.
+
+#### ➕ `full_adder_verify.py` — Full-Adder Construction
+
+I created **`full_adder_verify.py`** to build and verify a **full adder** using two half-adders and an OR gate. 
+I tracked the internal signals:
+
+```text
+SUM1
+CARRY1
+SUM2
+CARRY2
+```
+
+and composed them to produce the final:
+
+```text
+SUM
+CARRY_OUT
+```
+
+I tested all **8 possible combinations** of the three inputs (`A`, `B`, and `CARRY_IN`). 
+The implementation passed **8/8 cases**, confirming that the composed full-adder logic was correct.
+
+#### 🔍 Verification Thinking
+
+I continued the verification approach introduced on Day 6. 
+Instead of assuming that my gate implementations and full-adder composition were correct, I generated and compared truth-table results. 
+This reinforced the idea that a circuit can be represented mathematically and then **verified systematically against expected behavior**, 
+which is an important concept for future RTL and EDA work.
+
+#### 🏭 Hardware & Standard-Cell Understanding
+
+I learned why NAND universality matters beyond Boolean mathematics. 
+A small collection of reusable logic primitives can represent arbitrary Boolean logic, allowing synthesis tools to select implementations based on **area, timing, and power** rather than requiring a unique physical cell for every possible Boolean function. 
+I also learned the deeper CMOS-level reason NAND and NOR are important: **NAND/NOR structures can be physically cheaper than constructing equivalent AND/OR logic**, while an AND or OR implementation can require an additional inverter stage.
+
+#### 🧩 Parser Design Insight
+
+I recognized an important limitation in my implementation: although I successfully created standalone NAND and full-adder functions, I did **not yet extend the Day 6 Boolean parser itself** to recognize `NAND`, `NOR`, `XOR`, and `XNOR` as operators. 
+I understood why this matters: extending the parser creates a reusable expression-processing system instead of requiring a separate Python function for every new expression or operator. 
+This is an important step toward eventually handling more complex **EDA tool languages and expressions**.
+
+#### 🎯 Overall Progress
+
+Day 7 connected my **Boolean algebra knowledge to actual digital-circuit structures**. 
+I successfully proved NAND universality with **3/3 verified constructions** and built a full adder from two half-adders with **8/8 truth-table cases passing**. 
+I also strengthened my understanding of verification, circuit composition, universal gates, CMOS implementation trade-offs, and the importance of building reusable parsers rather than one-off scripts. 
+This gives me a stronger foundation for upcoming **digital logic, RTL, synthesis, and EDA concepts**.
