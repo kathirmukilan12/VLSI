@@ -1,0 +1,39 @@
+# Week 2 Output Report
+
+## 1. What I Learned
+
+During Week 2, I consolidated my digital-logic foundation from Boolean algebra through combinational and sequential logic. I strengthened my understanding of Boolean operations, De Morgan's laws, truth-table verification, universal NAND gates, full adders, and Karnaugh-map minimization. I learned how truth tables can be used systematically to verify Boolean transformations rather than simply assuming that an algebraic transformation is correct. I also learned how NAND can be used to construct NOT, AND, and OR gates, and how a full adder can be constructed from two half adders and an OR gate.
+The major new concept was sequential logic. I learned that sequential circuits contain state and therefore can remember information from the past. I studied SR latches, D latches, D flip-flops, rising-edge triggering, setup time, hold time, and the difference between level-sensitive latches and edge-sensitive flip-flops. I also built a 4-bit counter and learned how multiple flip-flops and feedback logic can create a changing sequence of states. My Day 9 implementation includes SR-latch, D-latch, and rising-edge D-flip-flop behavior.
+
+## 2. What I Implemented
+
+I implemented several Python-based digital-logic verification and simulation programs during Week 2. I created De Morgan verification using complete truth tables and compared the RESULT columns of original and transformed Boolean expressions. I implemented NAND-based NOT, AND, and OR gates and verified all three constructions successfully. I also built and verified a full adder across all 8 possible combinations of its three inputs.
+For sequential logic, I implemented an SR latch with explicit invalid-state handling, a D latch with hold behavior, and a rising-edge D flip-flop simulator. I also implemented a corrected 4-bit counter using the consistent representation `[Q0, Q1, Q2, Q3]`. For the Week 2 capstone, I implemented a rising-edge JK flip-flop simulator and used JK flip-flops to construct a 2-bit counter.
+
+## 3. What I Still Don't Understand
+
+I understand the basic behavior of latches, flip-flops, and counters, but I still need more practice connecting the Python simulations to actual hardware structures and RTL descriptions. I also need to become more comfortable deriving next-state logic for sequential circuits rather than relying on memorized equations. The relationship between JK, T, and D flip-flops and how synthesis represents these structures in real RTL is an area I need to strengthen before moving deeper into FSM design.
+
+## 4. Skills Gained
+
+I gained practical skills in Boolean reasoning, truth-table generation, systematic verification, gate-level modeling, Boolean minimization, sequential-state modeling, clock-edge detection, and Python simulation. I also improved my debugging ability by identifying the Week 2 counter bug caused by changing the meaning of the `q` list after reassignment. I learned that data representation must remain consistent throughout a simulation. My K-map work also strengthened my understanding of Gray-code ordering, grouping, don't-care conditions, and SOP minimization.
+
+## 5. Project Progress
+
+My digital-logic project has progressed from basic Boolean operations and number-system manipulation into actual combinational and sequential circuit simulation. I can now represent logic mathematically, implement it in Python, verify it with exhaustive input combinations, and simulate state-changing circuits. The project has progressed from individual gates to a full adder, K-map representation, latches, flip-flops, and counters. The next major step is to move from individual sequential elements to Finite State Machines.
+
+## 6. Research Progress
+
+I connected the concepts studied this week to EDA and synthesis. I learned that K-maps provide a manual understanding of Boolean minimization while modern synthesis tools perform algorithmic optimization for much larger logic networks. I also connected NAND-based logic to implementation considerations such as area, timing, and power. The sequential-logic work gave me an initial understanding of how state elements form the foundation of registers, counters, and eventually larger synchronous digital systems.
+
+## 7. Interview Readiness
+
+I can now explain the difference between combinational and sequential logic, define state, describe SR-latch behavior, explain the invalid SR condition, distinguish a latch from a flip-flop, explain rising-edge triggering, and describe setup and hold time at a conceptual level. I can also explain why NAND is universal, how a full adder works, why K-map cells use Gray-code ordering, and why larger K-maps become impractical. I can additionally explain the four JK states: hold, set, reset, and toggle. I still need more practice answering these questions quickly and deriving sequential behavior from first principles.
+
+## 8. Weaknesses
+
+My main weakness is that I sometimes understand the high-level concept before I fully understand the exact state transition or implementation details. The counter-indexing bug exposed this clearly: the algorithm itself was reasonable, but the representation of `[Q0, Q1, Q2, Q3]` versus `[Q3, Q2, Q1, Q0]` became inconsistent. I also need to improve my ability to translate a circuit diagram or state-transition rule into clean RTL-style thinking without depending too heavily on Python abstractions.
+
+## 9. Next Week's Objective
+
+The objective for Week 3 is to learn Finite State Machines. I will build on the sequential-logic foundation from Week 2 by learning states, state transitions, inputs, outputs, Moore and Mealy machines, state-transition diagrams, state tables, next-state logic, and FSM implementation. I will focus on understanding how flip-flops store the current state while combinational logic determines the next state. The final goal is to be able to design and simulate a small FSM before transitioning toward RTL implementation in Month 2.
